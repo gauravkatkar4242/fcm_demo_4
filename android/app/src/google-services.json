@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "90499109833",
+    "project_id": "fcm-demo-2-518f8",
+    "storage_bucket": "fcm-demo-2-518f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90499109833:android:323e8bac7e62b9278bce18",
+        "android_client_info": {
+          "package_name": "com.example.fcm_demo_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90499109833-mtji93sljjmh1n1fkhhetdl0gso8noo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2iSzk5FOnuFDmwvR-1OuN1BMeNAQ7iEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90499109833-mtji93sljjmh1n1fkhhetdl0gso8noo2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "90499109833-7n1ippn9ltdvrvst2f2m0rh2c162fafm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jombay.fcmDemo4"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90499109833:android:efa3e68456417fc28bce18",
+        "android_client_info": {
+          "package_name": "com.jombay.fcm_demo_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90499109833-mtji93sljjmh1n1fkhhetdl0gso8noo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2iSzk5FOnuFDmwvR-1OuN1BMeNAQ7iEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90499109833-mtji93sljjmh1n1fkhhetdl0gso8noo2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "90499109833-7n1ippn9ltdvrvst2f2m0rh2c162fafm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jombay.fcmDemo4"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

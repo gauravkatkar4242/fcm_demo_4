@@ -1,14 +1,18 @@
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:fcm_demo_4/screen_two.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+
+import 'fcm_listeners.dart';
+import 'getFCM.dart';
+import 'local_notification.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
-  // LocalNotification().initNotification();
-  // initFcmListeners();
+  LocalNotification().initNotification();
+  initFcmListeners();
 }
 
 class MyApp extends StatelessWidget {
@@ -38,15 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   Future<void> _incrementCounter() async {
-    // String? fcmKey = await getFCMTocken();
-    // print("FCM key : $fcmKey");
-
-    await Future.delayed(const Duration(seconds: 5));
-    // LocalNotification().showNotification(
-    //   id: 1,
-    //   title: "Local",
-    //   body: "Body",
-    // );
+    String? fcmKey = await getFCMTocken();
+    print("FCM key : $fcmKey");
+    LocalNotification().showNotification(
+      id: 1,
+      title: "Local",
+      body: "Body",
+    );
   }
 
   @override
@@ -54,11 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // FirebaseMessaging.onMessageOpenedApp.listen((message) {
-      //   print("------------------ FirebaseMessaging.onMessageOpenedApp");
-      //   Navigator.of(context)
-      //       .push(MaterialPageRoute(builder: (context) => const ScreenTwo()));
-      // });
+      FirebaseMessaging.onMessageOpenedApp.listen((message) {
+        print("------------------ FirebaseMessaging.onMessageOpenedApp");
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => const ScreenTwo()));
+      });
     });
   }
 
