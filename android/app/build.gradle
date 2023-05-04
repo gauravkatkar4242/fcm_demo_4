@@ -61,6 +61,19 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    flavorDimensions "fcmDemo4"
+
+    productFlavors {
+        staging {
+            dimension "fcmDemo4"
+            applicationIdSuffix ".staging"
+            manifestPlaceholders = [appName: "fcm_demo_4-Staging"]
+        }
+        production {
+            dimension "fcmDemo4"
+            manifestPlaceholders = [appName: "fcm_demo_4"]
+        }
+    }
 
 }
 

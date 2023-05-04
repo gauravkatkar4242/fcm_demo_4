@@ -1,11 +1,11 @@
 import 'dart:developer';
 
+import 'package:fcm_demo_4/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 import 'build_config.dart';
-import 'screens/home_screen.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -19,12 +19,15 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 Future<void> main() async {
   BuildConfig.init(
-    appName: "Fcm_demo_4",
+    appName: "Fcm_demo_4_staging",
   );
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  runApp(const MyApp());
+
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Prod app'),
+      home: const MyHomePage(title: 'Staging app'),
     );
   }
 }
