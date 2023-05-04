@@ -76,6 +76,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90499109833:android:b77c0940a090c9c98bce18",
+        "android_client_info": {
+          "package_name": "com.jombay.fcm_demo_4.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90499109833-mtji93sljjmh1n1fkhhetdl0gso8noo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2iSzk5FOnuFDmwvR-1OuN1BMeNAQ7iEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90499109833-mtji93sljjmh1n1fkhhetdl0gso8noo2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "90499109833-7n1ippn9ltdvrvst2f2m0rh2c162fafm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jombay.fcmDemo4"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

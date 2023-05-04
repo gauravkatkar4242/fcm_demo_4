@@ -1,6 +1,12 @@
+import 'dart:developer';
 import 'dart:io';
 
+import 'package:fcm_demo_4/screens/screen_three.dart';
+import 'package:fcm_demo_4/screens/screen_two.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+import 'main.dart';
 
 void notificationTapBackground(NotificationResponse notificationResponse) {
   print(" ---------- notificationTapBackground ---------- ");
@@ -29,16 +35,36 @@ class LocalNotification {
       initializationSettings,
       onDidReceiveNotificationResponse:
           (NotificationResponse notificationResponse) {
-        print(" ---------- onDidReceiveNotificationResponse ---------- ");
-        print("id: ${notificationResponse.id}");
-        print("actionId: ${notificationResponse.actionId}");
-        print("input: ${notificationResponse.input}");
-        print("payload: ${notificationResponse.payload}");
         print(
-            "notificationResponseType: ${notificationResponse.notificationResponseType}");
+            "---- ${notificationResponse.payload} ${notificationResponse.payload != null}");
+        if (notificationResponse.payload != null) {
+          print(" ----- Payload found ----- ");
+          _handleMessage(notificationResponse.payload!);
+        } else {
+          print(" ----- Payload not found ----- ");
+        }
       },
       onDidReceiveBackgroundNotificationResponse: notificationTapBackground,
     );
+  }
+
+  void _handleMessage(String message) {
+    print(" ----- _handleMessage ----- ");
+    if (message.contains('navigate_to: screenTwo')) {
+      Navigator.of(navigatorKey.currentContext!).push(
+        MaterialPageRoute(
+          builder: (context) => const ScreenTwo(),
+        ),
+      );
+    } else if (message.contains('navigate_to: screenThree')) {
+      Navigator.of(navigatorKey.currentContext!).push(
+        MaterialPageRoute(
+          builder: (context) => const ScreenThree(),
+        ),
+      );
+    } else {
+      log(" *--- Screen not Found ---");
+    }
   }
 
   Future<bool?> _requestPermissions() async {
@@ -67,7 +93,7 @@ class LocalNotification {
     required String body,
     String payload = "Hello",
   }) async {
-    print("___");
+    print("-------- $payload");
     notificationPermissionStatus = true;
     const androidPlatformChannelSpecifics = AndroidNotificationDetails(
       "proctoringNotificationChannelId",
