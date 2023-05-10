@@ -6,7 +6,7 @@ import 'package:fcm_demo_4/screens/screen_two.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 void notificationTapBackground(NotificationResponse notificationResponse) {
   print(" ---------- notificationTapBackground ---------- ");

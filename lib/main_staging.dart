@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:fcm_demo_4/screens/home_screen.dart';
+import 'package:fcm_demo_4/screens/screen_two.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Staging app'),
+      home: const ScreenTwo(),
     );
   }
 }
