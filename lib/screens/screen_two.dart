@@ -47,14 +47,14 @@ class ScreenTwo extends StatelessWidget {
           }
           final imagePath = "${dict.path}/image3.png";
           File file = File(imagePath);
-          final response = await Dio().download(
+          await Dio().download(
             "https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/09/26105755/fish-1.jpg",
             file.path,
           );
           print("file downloaded to ${file.path} --------");
           await Share.shareXFiles(
             [XFile(file.path)],
-            text: 'Custom Text',
+            // text: 'Custom Text', if added file wont be shared on meta platforms in iOS
             subject: "Custom Subject",
           );
         },
