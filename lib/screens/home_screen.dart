@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:fcm_demo_4/screens/screen_three.dart';
 import 'package:fcm_demo_4/screens/screen_two.dart';
-import 'package:fcm_demo_4/webViewScreen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
@@ -70,11 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> getToken() async {
     String? fcmKey = await getFCMToken();
     log("FCM key : $fcmKey");
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const WebViewScreen(),
-      ),
-    );
   }
 
   void _handleMessage(RemoteMessage message) {

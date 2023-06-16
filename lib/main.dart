@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:fcm_demo_4/screens/screen_two.dart';
+import 'package:fcm_demo_4/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -33,12 +33,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: navigatorKey,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ScreenTwo(),
-    );
+        navigatorKey: navigatorKey,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(
+          title: "Main",
+        ));
   }
 }
